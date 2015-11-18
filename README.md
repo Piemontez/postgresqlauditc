@@ -4,8 +4,6 @@ Postgresql Audit C
 The trigger
 ------------
 
-.. code-block:: sql
-
 	CREATE SCHEMA log;
  
 	CREATE TABLE log.audits
@@ -28,7 +26,6 @@ Demo / example code
 ------------
 
 Table and trigger
-.. code-block:: sql
 
 	CREATE TABLE teste_table
 	(
@@ -43,7 +40,6 @@ Table and trigger
 	          FOR EACH ROW  EXECUTE PROCEDURE auditc();
  
 Inserts and updates
-.. code-block:: sql
  
 	INSERT INTO teste_table (id, teste_char, teste_int) VALUES(10, 'Hello', 123)co;
 	INSERT INTO teste_table (id, teste_char, teste_int) VALUES(20, 'Good', 456);
@@ -51,7 +47,6 @@ Inserts and updates
 	UPDATE teste_table SET teste_char = 'Bye' WHERE id = 20;
 
 Consult
-.. code-block:: sql
 	 
 	SELECT id, owner_role, owner_id, operation, DATA, FIELDS FROM log.audits WHERE owner_role = 'public.teste_table' ORDER BY owner_id;
  
