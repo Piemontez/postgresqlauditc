@@ -58,6 +58,25 @@ Consult
 	-- 2  | public.teste_table | 20       | I         | {456,Good,20}  | {teste_int,teste_char,id}
 	-- 4  | public.teste_table | 20       | U         | {Bye}          | {teste_char}
 
+Build Steps
+------------
+
+Download
+
+	git clone https://github.com/Piemontez/postgresqlauditc
+
+
+Compile
+
+	cc -fpic -I/usr/include/pgsql/server/ -c audit.c
+
+Create shared Lib
+
+	cc -shared -o audit.so audit.o
+
+Move "audit.so" to postgres lib folder
+
+
 WIKI
 ------------
 https://wiki.postgresql.org/wiki/Audit_trigger_c
