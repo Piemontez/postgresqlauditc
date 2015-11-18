@@ -77,6 +77,12 @@ Create shared Lib
 Move "audit.so" to postgres lib folder
 
 
+Requirement
+------------
+
+required "postgresql-devel" headers for compile
+
+
 WIKI
 ------------
 https://wiki.postgresql.org/wiki/Audit_trigger_c
